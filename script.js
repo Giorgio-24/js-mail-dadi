@@ -1,43 +1,30 @@
-/* Mail
-Chiedi all’utente la sua email,
-controlla che sia nella lista di chi può accedere,
-stampa un messaggio appropriato sull’esito del controllo. */
+//^EMAIL LIST
 
-/* //= VARIABLES
-var message = 'Lei è autorizzato a procedere, benvenuto signore.'
+//= VARIABLES
+var list = ['nietzschefriedrich@gmail.com', 'sigmundfreud@gmail.com', 'marxkarl@gmail.com', 'immanuelkant@gmail.com', 'arthurschopenhauer@gmail.com'];
 
-var unauthorisedMessage = 'ATTENZIONE!! Non sei autorizzato a procedere.'
+var userMail = prompt('Inserisci la tua email: ');
 
-var userMail = prompt('Inserisci qui la tua email: ');
-console.log(userMail)
+var bool = false;
 
-var authorisedUsers = ['nietzschefriedrich@gmail.com', 'sigmundfreud@gmail.com', 'marxkarl@gmail.com', 'immanuelkant@gmail.com', 'arthurschopenhauer@gmail.com'];
-console.log(authorisedUsers)
+var len = list.length;
 
-var correspondance = false;
-
-var length = authorisedUsers.length;
-
-
-//= CICLE
-for (var i = 0; 1 < length; i++) {
-  if (userMail == authorisedUsers[i]) {
-      correspondance = true;
+//=CICLE
+for (var i = 0; i < len; i++) {
+  if (userMail == list[i]) {
+      bool = true;
   }
 }
 
-if (correspondance) {
-    var result = document.getElementById('authorised');
+if (bool) {
+    var result = document.getElementById('validation')
+    result.innerHTML = 'Lei è autorizzato a procedere, bentornato signore.';
     console.log(result);
-
-    result.innerHTML = message;
 } else {
-    var result = document.getElementById('unauthorised');
+    var result = document.getElementById('validation')
+    result.innerHTML = 'ATTENZIONE!! Non sei autorizzato a procedere.';
     console.log(result);
-
-    result.innerHTML = unauthorisedMessage;
-}  //! VA ALL'INFINITO */
-
+}
 
 //^GIOCO DEI DADI
 
