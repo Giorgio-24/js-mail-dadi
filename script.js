@@ -18,7 +18,7 @@ for (var i = 0; i < len; i++) {
 
 if (bool) {
     var result = document.getElementById('validation')
-    result.innerHTML = 'Lei è autorizzato a procedere, bentornato signore.';
+    result.innerHtml = 'Lei è autorizzato a procedere, bentornato signore.';
     console.log(result);
 } else {
     var result = document.getElementById('validation')
@@ -29,22 +29,53 @@ if (bool) {
 //^GIOCO DEI DADI
 
 //= VARIABLES
+var winningMessage = 'CONGRATULAZIONI! Hai vinto.'
 
-var x = 'VAI!';
+var losingMessage = 'OH NO! Hai perso, che sfortuna.'
 
-prompt('Tira il tuo dado.', x)
+var yourNumberIs = 'Dal tuo dado è uscito il numero: '
 
-var userNumber = Math.floor(Math.random() * 6) + 1;
-console.log(userNumber)
+var enemyNumberIs = 'Dal dado del tuo avversario è uscito il numero: '
 
-var cpuNumber = Math.floor(Math.random() * 6) + 1;
-console.log(cpuNumber)
+//=CICLE
+        for (var y = 0; y < 1; y++){
 
-//=CONDITIONS
-if (userNumber > cpuNumber){
-    alert('CONGRATULAZIONI! Hai vinto.')
-} else if (userNumber < cpuNumber){
-    alert('OH NO! Hai perso, che sfortuna.')
-} else {
-    alert('PAREGGIO! Gioca di nuovo la partita.')
-}
+        var x = 'VAI!';
+
+        prompt('Tira il tuo dado.', x)
+
+        var userNumber = Math.floor(Math.random() * 6) + 1;
+        console.log(userNumber)
+        
+        var cpuNumber = Math.floor(Math.random() * 6) + 1;
+        console.log(cpuNumber)
+
+        if (userNumber > cpuNumber){
+            var yourResult = document.getElementById('usernumber')
+            yourResult.innerText = yourNumberIs + userNumber;
+            console.log(yourResult)
+        
+            var enemyResult = document.getElementById('cpunumber')
+            enemyResult.innerText = enemyNumberIs + cpuNumber;
+            console.log(enemyResult)
+        
+            var finalDiceResult = document.getElementById('result')
+            finalDiceResult.innerText = winningMessage;
+            console.log(finalDiceResult.innerText)
+        } else if (userNumber < cpuNumber){
+            var yourResult = document.getElementById('usernumber')
+            yourResult.innerText = yourNumberIs + userNumber;
+            console.log(yourResult)
+        
+            var enemyResult = document.getElementById('cpunumber')
+            enemyResult.innerText = enemyNumberIs + cpuNumber;
+            console.log(enemyResult)
+        
+            var finalDiceResult = document.getElementById('result')
+            finalDiceResult.innerText = losingMessage;
+            console.log(finalDiceResult.innerText)
+        } else {
+            var y = --y;
+            alert('PAREGGIO! Gioca di nuovo la partita.')
+        }
+    }
