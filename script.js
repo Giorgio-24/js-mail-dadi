@@ -52,28 +52,24 @@ for (var y = 0; y < 1; y++){
   var cpuNumber = Math.floor(Math.random() * 6) + 1;
   console.log(cpuNumber)
 
- if (userNumber > cpuNumber){
-     var yourResult = document.getElementById('usernumber')
-     yourResult.innerText = yourNumberIs + userNumber;
-     console.log(yourResult)
-        
-     var enemyResult = document.getElementById('cpunumber')
+  var yourResult = document.getElementById('usernumber')
+  yourResult.innerText = yourNumberIs + userNumber;
+  console.log(yourResult)
+
+  var enemyResult = document.getElementById('cpunumber')
      enemyResult.innerText = enemyNumberIs + cpuNumber;
      console.log(enemyResult)
-        
+
+ if (userNumber > cpuNumber){
+     yourResult;
+     enemyResult;
      var finalDiceResult = document.getElementById('result')
      finalDiceResult.innerText = winningMessage;
      finalDiceResult.style.backgroundColor = "#00ff00"
      console.log(finalDiceResult.innerText)
  } else if (userNumber < cpuNumber){
-     var yourResult = document.getElementById('usernumber')
-     yourResult.innerText = yourNumberIs + userNumber;
-     console.log(yourResult)
-        
-     var enemyResult = document.getElementById('cpunumber')
-     enemyResult.innerText = enemyNumberIs + cpuNumber;
-     console.log(enemyResult)
-        
+     yourResult;
+     enemyResult;
      var finalDiceResult = document.getElementById('result')
      finalDiceResult.innerText = losingMessage;
      finalDiceResult.style.backgroundColor = "#ff0000"
